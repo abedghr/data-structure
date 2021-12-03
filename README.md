@@ -3,7 +3,7 @@
 
 # Linked List : 
 
-    Some Examples About Linked List :
+    Some Functions About Linked List :
 
         1- Add First To The List.
         2- Add Last To The List.
