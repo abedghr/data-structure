@@ -1,7 +1,6 @@
 # data-structure
 
-
-# Linked List : 
+## Linked List : 
 
     Some Functions About Linked List :
 
