@@ -20,3 +20,16 @@
         2- Pop From Stack (To Remove).
         3- Peak from Stack (Only To Return The Top Element)
         7- Print All Stack Data.
+
+## Queue : 
+
+    Some Functions About Queue :
+
+        1- Enqueue To Queue (To Add).
+        2- Dequeue From Queue (To Remove).
+        3- PrintQueue Queue.
+        4- Get Front Index
+        5- Get Front Value
+        6- Get Rear Value
+        7- Get Rear Value
+        8- 
