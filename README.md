@@ -19,7 +19,7 @@
         1- Push To Stack (To Add).
         2- Pop From Stack (To Remove).
         3- Peak from Stack (Only To Return The Top Element)
-        7- Print All Stack Data.
+        4- Print All Stack Data.
 
 ## Queue : 
 
@@ -32,4 +32,3 @@
         5- Get Front Value
         6- Get Rear Value
         7- Get Rear Value
-        8- 
