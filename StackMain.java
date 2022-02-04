@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 public class StackMain {
     public static void main(String[] args) {
         
@@ -37,5 +39,23 @@ public class StackMain {
         System.out.println("Message When Remove Element From Empty Stack");
         stack.pop();
         stack.pop();
+
+        System.out.println("Some Example on Stack.... arrows example '()'");
+        char [] arr1 = new char[]{'(',')','(','(',')',')','(',')'};
+        Stack<Character> stackChar = new Stack<Character>();
+        String check = "Success";
+        for(int i = 0; i< arr1.length; i++) {
+            if(arr1[i] == '(') {
+                stackChar.push('(');
+            } else { // arr1[i] == )
+                if(!stackChar.isEmpty()) {
+                    stackChar.pop();
+                    continue;
+                }
+                check = "Failed";
+                break;
+            }
+        }
+        System.out.println(check);
     }
 }

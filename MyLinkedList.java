@@ -1,3 +1,5 @@
+import org.w3c.dom.Node;
+
 public class MyLinkedList {
         
     MyNode head = null;
@@ -79,15 +81,32 @@ public class MyLinkedList {
         }
     }
 
+    public void RemoveFirst() {
+        head = head.next;
+        size--;
+
+    }
+
     // Remove From Node Function
     public void Remove(MyNode node) {
         MyNode h = head;
+        MyNode prev_node = h;
+
         while(h != node) {
+            prev_node = h;
             h = h.next;
         }
 
-        h.next = h.next.next;
-        size--;
+        if(h == node) {
+            if(size == 1) {
+                prev_node = null;
+                head = null;
+                
+            } else {
+                prev_node.next = prev_node.next.next;
+            }
+            size--;
+        }
 
     }
 
@@ -100,4 +119,77 @@ public class MyLinkedList {
         }
     }
 
+    public MyLinkedList removeDuplicate() {
+        MyNode he = head;
+        MyLinkedList uniqueList = new MyLinkedList();
+        uniqueList.AddFirst(he.data);
+        MyNode h = uniqueList.head;
+        MyNode x = h;
+
+        while(he != null) {
+
+            boolean add = true;
+
+            while(h != null) {
+                
+                if(he.data == h.data) {
+                    add = false;
+                    break;
+                }
+                
+                if(h.next == null) break;
+                h = h.next;
+            }
+
+            if(add) uniqueList.AddLast(he.data);
+
+            he = he.next;
+            h = x;
+        }
+
+        return uniqueList;
+    }
+
+    public MyLinkedList unionLinkedList(MyLinkedList list1, MyLinkedList list2) {
+        
+        MyLinkedList unionList = new MyLinkedList();
+        
+        MyNode list1_head = list1.head;
+        while(list1_head != null) {
+            unionList.AddLast(list1_head.data);
+            list1_head = list1_head.next;
+        }
+
+        MyNode list2_head = list2.head;
+        while(list2_head != null) {
+            unionList.AddLast(list2_head.data);
+            list2_head = list2_head.next;
+        }
+        
+        unionList = unionList.removeDuplicate();
+
+        return unionList;
+    }
+
+    public MyNode getNthNodeDate (int target) {
+
+        int n = this.size - target + 1;
+
+        if(size == 0 || n > size) return null;
+
+        int count = 1;
+        MyNode h = this.head;
+        while(h != null) {
+            
+            if(count != n) {
+                count++;
+                h = h.next;
+                continue;
+            }
+            
+            return h;
+        }
+        
+        return null;
+    }
 }
